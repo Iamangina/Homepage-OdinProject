@@ -219,6 +219,18 @@ footer .footer{
     .link img{
         width: 2em;
     }
+
+    .linksF{
+        display: flex;
+        justify-content: start;
+        gap: 1em;
+    }
+    .linkF img{
+        width: 3em;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+    }
 }
 
 @media(min-width: 1000px){
