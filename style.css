@@ -21,18 +21,28 @@ body{
     background-image: url("./images/background.webp");
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    max-width: 100%;
+    height: auto;
     text-align: center;
     margin: 0px;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display: block;
+}
+.all{
+    background-color: rgba(255, 255, 255, 0.883);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    margin: 0px;
+    max-width: 100%;
 }
 .aboutMe{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 2em;
-    background-color: rgba(255, 255, 255, 0.832);
     box-shadow: 0 0 3em black;
 }
 .imgBox{
@@ -75,11 +85,12 @@ body{
     border: none;
 }
 
-main{
+.mainSect{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.832);
+    width: 100%;
+    margin: 0px;
     margin-bottom: 0px;
 }
 
@@ -134,7 +145,6 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.832);
     font-family: PokemonHollow, Arial, Helvetica, sans-serif;
 }
 footer h3{
@@ -166,15 +176,20 @@ footer .footer{
     border: none;
 }
 
-@media(min-width: 500px) and (max-width: 1100px){
+@media(min-width: 768px) and (max-width: 1024px){
+    .all{
+        display: flex;
+        align-items: center;
+    }
     .aboutMe{
-        display: inline-block;
+        display: block;
+        margin: 0px;
         box-shadow: none;
-        width: 100%;
-        padding: 2em 5em;
+        padding: 2em;
+        overflow: hidden;
     }
     .imgBox{
-        margin: 0 4em;
+        margin: 0 4em 0 0;
         width: 20em;
         float: left;
         margin-right: 1rem;
@@ -195,7 +210,6 @@ footer .footer{
         padding: 1em;
         box-shadow: 0 0 2em black;
     }
-    
     .links{
         display: none;
     }
@@ -233,7 +247,7 @@ footer .footer{
     }
 }
 
-@media(min-width: 1100px){
+@media(min-width: 1025px){
     .aboutMe{
         display: flex;
         flex-direction: row;
@@ -248,14 +262,14 @@ footer .footer{
         box-shadow: 0 0 1em black;
     }
     .content{
-        width: 32em;
+        min-width: 26em;
         text-align: start;
         padding: 3em 1em 1em 1em;
         box-shadow: 0 0 1em black;
     }
     .links{
         display: flex;
-        width: 32em;
+        width: 26em;
         justify-content: end;
     }
     .title{
@@ -265,12 +279,13 @@ footer .footer{
         align-items: start;
         box-shadow: none;
     }
-    .titlePokemon{
-        margin-left: 6em;
-    }
     .pokemon{
-        gap: 5em;
-        padding: 0em 12em;
+        gap: 4em;
+        padding: 0em 4em;
+    }
+    .pok{
+        flex: 0 0 calc(30.3333% - 10px);
+        box-sizing: border-box;
     }
     footer .footer{
         width: 100%;
